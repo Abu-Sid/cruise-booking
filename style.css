@@ -142,7 +142,7 @@ a.active {
   padding-top: 50px;
   border-radius: 5px;
   width: 40%;
-  height: 20em;
+  height: 22em;
   margin-left: 180px;
   float: right;
   text-align: center;
@@ -156,7 +156,7 @@ a.active {
 #confirmation-area h2 {
   font-size: 25px;
 }
-#total {
+#total,#first-ticket,#economy-ticket {
   font-size: x-large;
   color: sandybrown;
 }
