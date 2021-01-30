@@ -147,7 +147,7 @@
               <h4>Total</h4>
             </div>
             <div class="right">
-              <p id="grand-total">0</p>
+              <p id="total-cost">0</p>
             </div>
           </div>
         </div>
@@ -179,7 +179,7 @@
     <!-- Javascript Start Here-->
     <script>
       function handleTicketChange(ticket, isIncrease) {
-        const ticketCount = getInputValue(ticket);
+        const ticketCount = getTicketCount(ticket);
         let ticketNewCount = ticketCount;
         if (isIncrease == true) {
           ticketNewCount = ticketCount + 1;
@@ -195,12 +195,12 @@
         if (ticket == "economy") {
           ticketTotal = ticketNewCount * 100;
         }
-        calculateTotal();
+        calculateTotalPrice();
       }
-
-      function calculateTotal() {
-        const firstCount = getInputValue("first");
-        const economyCount = getInputValue("economy");
+      //Price Calculation
+      function calculateTotalPrice() {
+        const firstCount = getTicketCount("first");
+        const economyCount = getTicketCount("economy");
 
         const totalPrice = firstCount * 150 + economyCount * 100;
         document.getElementById("total-price").innerText = "$" + totalPrice;
@@ -208,16 +208,17 @@
         const tax = Math.round(totalPrice * 0.1);
         document.getElementById("tax-amount").innerText = "$" + tax;
 
-        const grandTotal = totalPrice + tax;
-        document.getElementById("grand-total").innerText = "$" + grandTotal;
-        document.getElementById("total").innerText = grandTotal;
+        const totalCost = totalPrice + tax;
+        document.getElementById("total-cost").innerText = "$" + totalCost;
+        document.getElementById("total").innerText = totalCost; //Total cost display in massage
       }
-
-      function getInputValue(ticket) {
+      //Count CalCulation
+      function getTicketCount(ticket) {
         const ticketInput = document.getElementById(ticket + "-count");
         const ticketCount = parseInt(ticketInput.value);
         return ticketCount;
       }
+      //Confirmation Massage Display
       document
         .getElementById("booking-btn")
         .addEventListener("click", function () {
@@ -226,8 +227,6 @@
           const confirmationArea = document.getElementById("confirmation-area");
           confirmationArea.style.display = "block";
         });
-      const totalCost = document.getElementById("grand-total").innerText;
-      document.getElementById("total").innerText = totalCost;
     </script>
     <!-- Javascript End Here-->
   </body>
