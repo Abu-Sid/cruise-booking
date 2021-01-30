@@ -153,6 +153,10 @@ background-color:crimson;
 #confirmation-area h1{
     font-size: 40px;
 }
-#confirmation-area h3{
+#confirmation-area h2{
     font-size: 25px;
+}
+#total{
+    font-size: x-large;
+    color: sandybrown;
 }

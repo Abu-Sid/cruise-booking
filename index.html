@@ -161,17 +161,17 @@
       <div>
         <h1>Get Ready for New York!!</h1>
         <br />
-        <h3>Your Reservation is Confirmed</h3>
+        <h2>Your Reservation is Confirmed</h2>
         <br />
-        <h4>
+        <h3>
           Dear, Thanks for your booking with Ocean Queen. Your booking
-          conformation number is :010101010
-        </h4>
-        <h4>
-          You have been charged total of $<span id="total"></span>(including
+          confirmation number is : 010101010
+        </h3>
+        <h3>
+          You have been charged total of $<span id="total"> </span>(including
           tax) <br /><br />
-          Please check your email for more information.
-        </h4>
+          Please check confirmation email for more information.
+        </h3>
       </div>
     </section>
     <!-- Confirmation Massage End Here-->
@@ -214,7 +214,6 @@
       }
 
       function getInputValue(ticket) {
-        console.log(ticket);
         const ticketInput = document.getElementById(ticket + "-count");
         const ticketCount = parseInt(ticketInput.value);
         return ticketCount;
@@ -227,8 +226,8 @@
           const confirmationArea = document.getElementById("confirmation-area");
           confirmationArea.style.display = "block";
         });
-      const total = document.getElementById("grand-total").innerText;
-      document.getElementById("total").innerText = total;
+      const totalCost = document.getElementById("grand-total").innerText;
+      document.getElementById("total").innerText =totalCost;
     </script>
     <!-- Javascript End Here-->
   </body>
